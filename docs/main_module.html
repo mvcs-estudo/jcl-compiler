@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module main_module</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>main_module</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/developer/py_projects/jcl-compiler/main_module.py">d:\developer\py_projects\jcl-compiler\main_module.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#-------------------------------------------------------------------------------<br>
+#&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Módulo&nbsp;Principal<br>
+#&nbsp;Purpose:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Orquestrar&nbsp;o&nbsp;upload&nbsp;e&nbsp;submissão&nbsp;de&nbsp;jobs&nbsp;de&nbsp;compilação&nbsp;ao&nbsp;mainframe<br>
+#<br>
+#&nbsp;Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marcus&nbsp;Sacramento<br>
+#<br>
+#&nbsp;Created:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18/07/2019<br>
+#&nbsp;Copyright:&nbsp;&nbsp;&nbsp;(c)&nbsp;dev89&nbsp;2019<br>
+#&nbsp;Licence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSource<br>
+#-------------------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="argparse.html">argparse</a><br>
+<a href="codecs.html">codecs</a><br>
+<a href="configparser.html">configparser</a><br>
+<a href="datetime.html">datetime</a><br>
+</td><td width="25%" valign=top><a href="ftplib.html">ftplib</a><br>
+<a href="io.html">io</a><br>
+<a href="logging.html">logging</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="packages.html">packages</a><br>
+<a href="platform.html">platform</a><br>
+<a href="re.html">re</a><br>
+<a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top><a href="time.html">time</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-arguments_application"><strong>arguments_application</strong></a>()</dt><dd><tt>Carregamento&nbsp;dos&nbsp;argumentos&nbsp;passados&nbsp;por&nbsp;linha&nbsp;de&nbsp;comando</tt></dd></dl>
+ <dl><dt><a name="-compiler_validator"><strong>compiler_validator</strong></a>(job_list, ftp, args, config)</dt><dd><tt>Realiza&nbsp;a&nbsp;Validação&nbsp;do&nbsp;JOB&nbsp;submetido&nbsp;ao&nbsp;Mainframe.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Necessário&nbsp;configurar&nbsp;a&nbsp;SYSOUT&nbsp;para&nbsp;saída&nbsp;em&nbsp;arquivo&nbsp;no&nbsp;Maiframe&nbsp;e<br>
+&nbsp;&nbsp;&nbsp;&nbsp;alimentar&nbsp;no&nbsp;arquivo&nbsp;properties&nbsp;o&nbsp;padrão&nbsp;de&nbsp;JOB<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+job_list:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;os&nbsp;JOBS&nbsp;submetidos<br>
+ftp:&nbsp;FTP,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Conexão&nbsp;ftp<br>
+args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+config&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;da&nbsp;configuração&nbsp;definida&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;o&nbsp;resultado&nbsp;da&nbsp;submissão</tt></dd></dl>
+ <dl><dt><a name="-get_exe"><strong>get_exe</strong></a>(program_list, ftp, args, config)</dt><dd><tt>Realiza&nbsp;a&nbsp;submissão&nbsp;de&nbsp;cartões&nbsp;de&nbsp;compilação&nbsp;JCL&nbsp;para&nbsp;o&nbsp;Mainframe<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+program_list:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;os&nbsp;programas&nbsp;submetidos<br>
+ftp:&nbsp;FTP,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Conexão&nbsp;ftp<br>
+args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+config&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;da&nbsp;configuração&nbsp;definida&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;o&nbsp;resultado&nbsp;da&nbsp;submissão</tt></dd></dl>
+ <dl><dt><a name="-load_config"><strong>load_config</strong></a>(args)</dt><dd><tt>Carrega&nbsp;Arquivo&nbsp;de&nbsp;configuração<br>
+Carrega&nbsp;o&nbsp;arquivo&nbsp;de&nbsp;configuração&nbsp;informado&nbsp;nos&nbsp;parametros.<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+&nbsp;<br>
+Raises<br>
+------<br>
+Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+Lista&nbsp;de&nbsp;configurações</tt></dd></dl>
+ <dl><dt><a name="-log_manager"><strong>log_manager</strong></a>(args)</dt><dd><tt>Gerencia&nbsp;os&nbsp;logs&nbsp;da&nbsp;aplicação<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Deve-se&nbsp;informar&nbsp;o&nbsp;nível&nbsp;de&nbsp;log&nbsp;da&nbsp;aplicação&nbsp;de&nbsp;acordo&nbsp;com&nbsp;os&nbsp;argumentos<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;--cl:&nbsp;Console&nbsp;Log<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;--fl:&nbsp;File&nbsp;Log<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Os&nbsp;níeis&nbsp;de&nbsp;log&nbsp;para&nbsp;ambos:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;CRITICAL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;ERROR<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;WARNING<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;INFO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;DEBUG<br>
+&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;NOTSET<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Objeto&nbsp;Logger</tt></dd></dl>
+ <dl><dt><a name="-program_uploader"><strong>program_uploader</strong></a>(ftp, args, config)</dt><dd><tt>Realiza&nbsp;o&nbsp;upload&nbsp;de&nbsp;programas&nbsp;para&nbsp;o&nbsp;Mainframe<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Os&nbsp;PDS&nbsp;devem&nbsp;ser&nbsp;configurados&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+ftp:&nbsp;FTP,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Conexão&nbsp;ftp<br>
+args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+config&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;da&nbsp;configuração&nbsp;definida&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;o&nbsp;resultado&nbsp;da&nbsp;submissão</tt></dd></dl>
+ <dl><dt><a name="-submit_compiler"><strong>submit_compiler</strong></a>(program_list, ftp, args, config)</dt><dd><tt>Realiza&nbsp;a&nbsp;submissão&nbsp;de&nbsp;cartões&nbsp;de&nbsp;compilação&nbsp;JCL&nbsp;para&nbsp;o&nbsp;Mainframe<br>
+&nbsp;<br>
+Parameters<br>
+----------<br>
+program_list:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;os&nbsp;programas&nbsp;submetidos<br>
+ftp:&nbsp;FTP,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Conexão&nbsp;ftp<br>
+args&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+config&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;da&nbsp;configuração&nbsp;definida&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;com&nbsp;o&nbsp;resultado&nbsp;da&nbsp;submissão</tt></dd></dl>
+</td></tr></table>
+</body></html>

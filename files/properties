@@ -1,0 +1,15 @@
+[GENERAL]
+batch_extension=cbl
+cics_extension=cbl
+booklib_extension=cpy
+jcl_program=AAINTRDR
+[PRODUCAO]
+hostname=localhost
+port=2100
+sysout_pattern=HERC01.#JOB_NAME#.#JOB_ID#.OUTLIST
+batch_program_pds=HERC01.PRIVLIB.SOURCE
+cics_program_pds=HERC01.PRIVLIB.CICS
+booklib_pds=HERC01.PRIVLIB.SOURCE
+exe_batch_pds=HERC01.PRIVLIB.LOAD
+exe_cics_pds=HERC01.PRIVLIB.LOAD
+validator_pds=HERC01.TEST.COMP

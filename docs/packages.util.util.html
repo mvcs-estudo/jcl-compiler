@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module packages.util.util</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="packages.html"><font color="#ffffff">packages</font></a>.<a href="packages.util.html"><font color="#ffffff">util</font></a>.util</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///D:/developer/py_projects/jcl-compiler/packages/util/util.py">d:\developer\py_projects\jcl-compiler\packages\util\util.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>
+#-------------------------------------------------------------------------------<br>
+#&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Módulo&nbsp;de&nbsp;utilitários&nbsp;para&nbsp;a&nbsp;compilação<br>
+#&nbsp;Purpose:<br>
+#<br>
+#&nbsp;Author:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Marcus&nbsp;Sacramento<br>
+#<br>
+#&nbsp;Created:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18/07/2019<br>
+#&nbsp;Copyright:&nbsp;&nbsp;&nbsp;(c)&nbsp;dev89&nbsp;2019<br>
+#&nbsp;Licence:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSource<br>
+#-------------------------------------------------------------------------------</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="codecs.html">codecs</a><br>
+<a href="io.html">io</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+<a href="platform.html">platform</a><br>
+</td><td width="25%" valign=top><a href="sys.html">sys</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-initiate_util"><strong>initiate_util</strong></a>(arguments, configuration, handler_logger)</dt><dd><tt>Inicialização&nbsp;de&nbsp;submodulo&nbsp;da&nbsp;aplicação<br>
+Parameters<br>
+----------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;arguments&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;na&nbsp;linha&nbsp;de&nbsp;comando<br>
+&nbsp;&nbsp;&nbsp;&nbsp;configuration&nbsp;:&nbsp;list,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lista&nbsp;dos&nbsp;argumentos&nbsp;informados&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;propriedades<br>
+&nbsp;&nbsp;&nbsp;&nbsp;handler_logger&nbsp;:&nbsp;Object,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Objeto&nbsp;para&nbsp;gravação&nbsp;de&nbsp;Log<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Raises<br>
+&nbsp;&nbsp;&nbsp;&nbsp;------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Returns<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nenhum&nbsp;Retorno</tt></dd></dl>
+ <dl><dt><a name="-open_file"><strong>open_file</strong></a>(directory, filename, extension<font color="#909090">='txt'</font>)</dt><dd><tt>Substituição&nbsp;de&nbsp;parâmetro&nbsp;em&nbsp;um&nbsp;determinado&nbsp;arquivo<br>
+Parameters<br>
+----------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;directory:&nbsp;str,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Diretório&nbsp;do&nbsp;arquivo&nbsp;local<br>
+&nbsp;&nbsp;&nbsp;&nbsp;filename:&nbsp;str,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome&nbsp;do&nbsp;Arquivo<br>
+&nbsp;&nbsp;&nbsp;&nbsp;extension:&nbsp;str,&nbsp;default=txt<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extensão&nbsp;do&nbsp;arquivo.&nbsp;Informado&nbsp;no&nbsp;arquivo&nbsp;de&nbsp;Properties<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;result:&nbsp;BytesIO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo&nbsp;com&nbsp;texto&nbsp;substituído</tt></dd></dl>
+ <dl><dt><a name="-replace_string_parameter"><strong>replace_string_parameter</strong></a>(input_file, original_string, replace_string)</dt><dd><tt>Substituição&nbsp;de&nbsp;parâmetro&nbsp;em&nbsp;um&nbsp;determinado&nbsp;arquivo<br>
+Parameters<br>
+----------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;input_file:&nbsp;TextIoWrapper,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo&nbsp;de&nbsp;origem&nbsp;para&nbsp;substituição&nbsp;dos&nbsp;parâmetros<br>
+&nbsp;&nbsp;&nbsp;&nbsp;original_string:&nbsp;str,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;original&nbsp;a&nbsp;ser&nbsp;substituída<br>
+&nbsp;&nbsp;&nbsp;&nbsp;replace_string:&nbsp;str,&nbsp;required<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;que&nbsp;substituíra&nbsp;a&nbsp;antiga<br>
+Raises<br>
+------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Nenhuma&nbsp;exceção&nbsp;lançada<br>
+Returns<br>
+-------<br>
+&nbsp;&nbsp;&nbsp;&nbsp;result:&nbsp;BytesIO<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Arquivo&nbsp;com&nbsp;texto&nbsp;substituído</tt></dd></dl>
+</td></tr></table>
+</body></html>
